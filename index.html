@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="./styles/tailwind.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Shortly URL shortening API Challenge</title>
+</head>
+<body class="font-Poppins">
+  <!--Navbar section-->
+  <header class="sticky top-0 z-10">
+    <section class="max-w-6xl mx-auto p-6 mt-4">
+        <nav class="flex justify-between items-center">
+        <div class="py-1">
+            <img src="./images/logo.svg" alt="Shortly"/>
+        </div>
+        <!--Hamburger Menu-->
+        <div>
+        <button id="hamburger-menu" class="text-3xl sm:hidden cursor-pointer relative w-8 h-8">
+            <div class="bg-black w-8 h-1 rounded absolute right-6 top-2 -mt-0.5 transition-all duration-500 before:content-[''] before:bg-black before:w-8 before:h-1 before:rounded before:absolute before:-translate-x-4 before:-translate-y-3 before:transition-all before:duration-500 after:content-[''] after:bg-black after:w-8 after:h-1 after:rounded after:absolute after:-translate-x-4 after:translate-y-3 after:transition-all after:duration-500">
+            </div>
+        </button>
+        </div>
+        <ul class="hidden sm:flex flex-1 gap-4 justify-start items-center ml-12">
+            <li><a class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 font-bold hover:text-primary-dark-violet" href="#features">Features</a></li>
+            <li><a class="text-neutral-grayish-violet cursor-pointer font-bold ease-in duration-300 hover:text-primary-dark-violet"  href="#pricing">Pricing</a></li>
+            <li><a class="text-neutral-grayish-violet cursor-pointer  font-bold ease-in duration-300 hover:text-primary-dark-violet"  href="#resources">Resources</a></li>
+        </ul>
+        </div>
+        <div class="gap-2 hidden sm:flex justify-center">
+            <button class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan w-28 border-none outline-none p-2">Login</button>
+            <button class="text-white bg-primary-cyan w-28 rounded-3xl p-2 ease-out duration-300 hover:text-gray-600 hover:bg-cyan-200">Sign Up</button>
+        </div>
+        </nav>
+    </section>
+    <section id="mobile-menu" class="max-w-6xl absolute top-68 bg-black w-full text-3xl  flex-col justify-content-center origin-top animate-open-menu hidden">
+        <nav class="flex flex-col min-h-screen items-center px-8" aria-label='mobile'>
+            <a href="#features" class='w-full text-center py-6 text-white hover:opacity-70'>Features</a>
+            <a href="#pricing" class='text-white w-full text-center py-6 hover:opacity-70'>Pricing</a>
+            <a href="#resources" class='text-white w-full text-center py-6 hover:opacity-70'>Resources</a>
+            <div class="flex flex-col sm:hidden justify-center gap-8 items-center mt-8">
+                <button class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan border-none outline-none p-4 w-full">Login</button>
+                <button class="text-white bg-primary-cyan rounded-3xl p-4 ease-out duration-300 hover:text-gray-600 hover:bg-cyan-200 w-full">Sign Up</button>
+            </div>
+        </nav>
+    </section>
+  </header>
+
+  <!--Main container-->
+ <main class="max-w-6xl mx-auto mt-32">
+    
+<!--Hero section-->
+    <section class="max-w-6xl flex flex-col-reverse lg:flex-row items-center gap-32 mt-4 sm:mt-16">
+      <div class="flex flex-col sm:w-full p-4 justify-center items-center lg:items-start">
+        <!-- <div class="flex flex-1 flex-col items-center lg:items-start"> -->
+        <p class="text-primary-dark-violet font-bold text-4xl text-center lg:text-left sm:text-7xl">More than just shorter links</p>
+        <p class="mt-4 text-center lg:text-left text-neutral-grayish-violet font-bold text-lg">  Build your brand’s recognition and get detailed insights 
+          on how your links are performing.</p>
+        <div class="flex mt-6 w-full sm:w-1/2 justify-center items-center sm:justify-start sm:items-start">
+            <button class="text-white bg-primary-cyan rounded-full w-full sm:w-1/2 text-lg font-bold p-4 ease-out duration-300
+             hover:text-gray-600 hover:bg-cyan-200">Get Started</button>
+        </div>
+      </div>
+      <div class="flex justify-center items-center px-4">
+        <img src="./images/illustration-working.svg" alt="illustration-working" class="w-[100%] md:w-[450px] scale-125 md:scale-150 ml-32 sm:ml-0 md:ml-48"/>
+      </div>
+    </section>
+
+  <!--Functional section-->
+  <section id="functional" class="mt-32 mx-auto scroll-mt-20 p-6">
+    <div class="flex flex-col sm:flex-row rounded-lg justify-center sm:justify-between items-center
+     bg-primary-dark-violet bg-[url('./images/bg-shorten-mobile.svg')] sm:bg-[url('./images/bg-shorten-desktop.svg')] bg-no-repeat p-8
+    bg-cover  sm:w-full gap-y-4">
+        <div class="flex justify-center items-center sm:w-3/4 sm:mx-4 w-full">
+            <input type="text" placeholder="Shorten a link here..." class="rounded-lg outline-none w-full p-3 text-lg"/>
+        </div>
+        <div class="flex sm:w-1/4 justify-center items-center w-full">
+        <button class="text-white bg-primary-cyan rounded-lg text-lg font-bold p-3 sm:mx-4 ease-out duration-300 hover:text-gray-600 hover:bg-cyan-200 w-full">
+            Shorten It!</button>
+        </div>
+    </div>
+  </section>
+
+  <!--Advanced Features & Stats section-->
+  <section id="features" class="mt-32 bg-[#f0f1f6] mx-auto scroll-mt-20">
+    <div class="flex flex-col justify-center items-center flex-wrap p-8 mx-auto">
+        <p class="text-primary-dark-violet font-bold text-3xl sm:text-4xl mt-4 text-center">Advanced Statistics</p>
+        <p class="mt-4 text-neutral-grayish-violet text-lg text-center">Track how your links are performing across the web with our advanced statistics dashboard.</p>
+    </div>
+    <!-- grid grid-cols-3 gap-x-8 mt-32 mb-32 -->
+    <div class="container grid sm:grid-cols-3 gap-x-8 mt-32 mb-32 items-start p-8">
+        <div class="flex flex-col bg-white rounded-sm p-8 shadow-lg relative card">
+            <img src="./images/icon-brand-recognition.svg" alt="Brand Recognition" class="absolute rounded-full bg-primary-dark-violet p-4 top-[-45px]"/>
+            <p class="text-primary-dark-violet font-bold text-2xl mt-8">Brand Recognition</p>
+            <p class="mt-4 text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan text-lg font-bold break-words">Boost your brand recognition with each click. Generic links don’t 
+                mean a thing. Branded links help instil confidence in your content.</p>
+        </div>
+
+        <div class="flex flex-col bg-white rounded-sm p-8 shadow-lg relative card mt-20 sm:mt-16">
+            <img src="./images/icon-detailed-records.svg" alt="Brand Recognition" class="absolute rounded-full bg-primary-dark-violet p-4 top-[-45px]"/>
+            <p class="text-primary-dark-violet font-bold text-2xl mt-8">Detailed Records</p>
+            <p class="mt-4 text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan text-lg font-bold break-words">Gain insights into who is clicking your links. Knowing when and where 
+                people engage with your content helps inform better decisions.</p>
+        </div>
+
+        <div class="flex flex-col bg-white rounded-sm p-8 shadow-lg relative card mt-20 sm:mt-32">
+            <img src="./images/icon-fully-customizable.svg" alt="Brand Recognition" class="absolute rounded-full bg-primary-dark-violet p-4 top-[-45px]"/>
+            <p class="text-primary-dark-violet font-bold text-2xl mt-8">Fully Customizable</p>
+            <p class="mt-4 text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan text-lg font-bold break-words">Improve brand awareness and content discoverability through customizable 
+                links, supercharging audience engagement.</p>
+        </div>
+    </div>
+  </section>
+</main>
+  <!--Boost section-->
+  <section class="mt-32">
+    <div class="flex flex-col justify-center items-center bg-primary-dark-violet bg-[url('./images/bg-boost-mobile.svg')] sm:bg-[url('./images/bg-boost-desktop.svg')] bg-no-repeat p-8
+    mx-auto bg-cover">
+        <p class="text-white text-3xl sm:text-4xl font-bold">Boost your links today</p>
+        <button class="text-white bg-primary-cyan rounded-full w-full lg:w-[30%] text-lg font-bold p-4 mt-8 ease-out duration-300 hover:text-gray-600 hover:bg-cyan-200">Get Started</button>
+    </div>
+  </section>
+
+  <!--Footer-->
+  <footer id="resources" class="bg-neutral-dark-violet p-16">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between">
+        <div class="mb-8 sm:mb-0">
+            <p class="text-white text-5xl text-center">Shortly</p>
+        </div>
+        <div class="flex flex-col mb-8 sm:mb-0">
+            <p class="text-white mb-4 text-center sm:text-left">Features</p>
+            <ul class="flex flex-col justify-center items-center sm:justify-start sm:items-start gap-y-4">
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Link Shortening</li>
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Branded Links</li>
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Analytics</li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col mb-8 sm:mb-0">
+            <p class="text-white mb-4 text-center sm:text-left">Resources</p>
+            <ul class="flex flex-col justify-center items-center sm:justify-start sm:items-start gap-y-4">
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Blog</li>
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Developers</li>
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Support</li>
+            </ul>
+        </div>
+
+        <div class="flex flex-col mb-8 sm:mb-0">
+            <p class="text-white mb-4 text-center sm:text-left">Company</p>
+            <ul class="flex flex-col justify-center items-center sm:justify-start sm:items-start gap-y-4">
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">About</li>
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Our Team</li>
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Careers</li>
+                <li class="text-neutral-grayish-violet cursor-pointer ease-in duration-300 hover:text-primary-cyan">Contact</li>
+            </ul>
+        </div>
+
+        <div class="flex justify-center items-center gap-x-6">
+            <img src="./images/icon-facebook.svg" alt="Facebook" class="w-[20px] h-[20px] cursor-pointer"/>
+            <img src="./images/icon-twitter.svg" alt="Twitter" class="w-[20px] h-[20px] cursor-pointer"/>
+            <img src="./images/icon-pinterest.svg" alt="Pinterest" class="w-[20px] h-[20px] cursor-pointer"/>
+            <img src="./images/icon-instagram.svg" alt="Instagram" class="w-[20px] h-[20px] cursor-pointer"/>
+        </div>
+    </div>
+  </footer>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+<script src="./index.js" type="text/javascript"></script>
+</body>
+</html>

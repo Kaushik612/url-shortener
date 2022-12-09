@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer utilities{
+  .section-min-height {
+    min-height: calc(100vh - 68px);
+  }
+
+  .toggle-btn{
+    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg]
+  }
+}
+
+.card:not(:last-child)::after {
+    position: absolute;
+    content: '';
+    background-color: hsl(180, 66%, 49%);
+    width: 8px;
+    height: 47px;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+  }
+
+  .card:nth-child(1)::after {
+    top: 150px;
+    right: -19px;
+    left: auto;
+    transform: rotateZ(90deg);
+    height: 30px;
+  }
+  
+  .card:nth-child(2)::after {
+    top: 105px;
+    right: -19px;
+    left: auto;
+    transform: rotateZ(90deg);
+    height: 30px;
+  }
+
+
+  @media (min-width: 640px) {
+    html{
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (max-width: 550px) {
+    html{
+      overflow-x: hidden;
+    }
+    .card:nth-child(1)::after {
+      right: -19px;
+      height: 70px;
+      top: 285px;
+      transform: rotateZ(0deg);
+      left: 150px;
+    }
+    
+    .card:nth-child(2)::after {
+      right: -19px;
+      height: 70px;
+      top: 285px;
+      transform: rotateZ(0deg);
+      left: 150px;
+    }
+
+    .card:nth-child(1) > img,   .card:nth-child(2) > img{
+    left: 120px;
+    }
+
+    
+    .card:nth-child(3) > img{
+      left: 115px;
+      }
+    
+  }
