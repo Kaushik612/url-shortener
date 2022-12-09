@@ -72,13 +72,14 @@
       left: 150px;
     }
 
-    .card:nth-child(1) > img,   .card:nth-child(2) > img{
-    left: 120px;
+    .card > img{
+      top: 1%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
-    
-    .card:nth-child(3) > img{
-      left: 115px;
-      }
+    .card:not(:last-child)::after {
+      display: none;
+    }
     
   }

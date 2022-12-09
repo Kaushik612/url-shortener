@@ -852,12 +852,12 @@ video {
   background-color: hsl(260 8% 14% / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\.\/images\/bg-shorten-mobile\.svg\'\)\] {
-  background-image: url('./images/bg-shorten-mobile.svg');
+.bg-\[url\(\'\.\.\/images\/bg-shorten-mobile\.svg\'\)\] {
+  background-image: url('../images/bg-shorten-mobile.svg');
 }
 
-.bg-\[url\(\'\.\/images\/bg-boost-mobile\.svg\'\)\] {
-  background-image: url('./images/bg-boost-mobile.svg');
+.bg-\[url\(\'\.\.\/images\/bg-boost-mobile\.svg\'\)\] {
+  background-image: url('../images/bg-boost-mobile.svg');
 }
 
 .bg-cover {
@@ -1079,12 +1079,14 @@ video {
     left: 150px;
   }
 
-  .card:nth-child(1) > img,   .card:nth-child(2) > img{
-    left: 120px;
+  .card > img{
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
-  .card:nth-child(3) > img{
-    left: 115px;
+  .card:not(:last-child)::after {
+    display: none;
   }
 }
 
@@ -1288,12 +1290,12 @@ video {
     justify-content: space-between;
   }
 
-  .sm\:bg-\[url\(\'\.\/images\/bg-shorten-desktop\.svg\'\)\] {
-    background-image: url('./images/bg-shorten-desktop.svg');
+  .sm\:bg-\[url\(\'\.\.\/images\/bg-shorten-desktop\.svg\'\)\] {
+    background-image: url('../images/bg-shorten-desktop.svg');
   }
 
-  .sm\:bg-\[url\(\'\.\/images\/bg-boost-desktop\.svg\'\)\] {
-    background-image: url('./images/bg-boost-desktop.svg');
+  .sm\:bg-\[url\(\'\.\.\/images\/bg-boost-desktop\.svg\'\)\] {
+    background-image: url('../images/bg-boost-desktop.svg');
   }
 
   .sm\:text-left {
